@@ -1,19 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import storage from "local-storage-fallback";
-import Header from "./Components/Header/Header";
-import Home from "./Components/Home/Home";
-import { GlobalProvider } from "./Components/Global/GlobalState";
+
 import HomeMain from "./Components/HomeMain/HomeMain";
+import SignIn from "./Components/SignIn/SignIn";
+import SignUp from "./Components/SignUp/SignUp";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const LightTheme = {
   pageBackground: "white",
   textColor: "#071E48",
+  gradentBackground: "linear-gradient(to right, #EEEEEE, #FBFBFB)",
+  compGradent: "linear-gradient(to right, #ffffff, #f6f9ff, #ffffff)",
+  footerBgColor: "#f6f9ff",
+  footerTextTitleColor: "#273B60",
+  footerTextNavColor: "#273B60",
 };
 
 const DarkTheme = {
   pageBackground: "#212429",
   textColor: "#fff",
+  gradentBackground:
+    "linear-gradient(to bottom right, #2d2f33, #2c2e32, #222529)",
+  compGradent:
+    "linear-gradient(to bottom right, #222529, #272A2F, #2A2D31, #2A2C31, #272A2F, #222529)",
+  footerBgColor: "linear-gradient(to bottom, #212429, #1A1C20  )",
+  footerTextTitleColor: "#fafafa",
+  footerTextNavColor: "#D1E0FB",
 };
 
 const themes = {
@@ -35,21 +48,19 @@ function App() {
   }, [theme]);
   return (
     <div>
-      <GlobalProvider>
+      <BrowserRouter>
         <ThemeProvider theme={themes[theme]}>
-          <Header theme={theme} setTheme={setTheme} />
-          {/* <Home theme={theme} setTheme={setTheme} /> */}
-          <HomeMain theme={theme} setTheme={setTheme} />
+          <Routes>
+            <Route
+              path="/"
+              element={<HomeMain theme={theme} setTheme={setTheme} />}
+            />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
         </ThemeProvider>
-      </GlobalProvider>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
-
-// const Container = styled.div`
-//   height: 100%;
-//   width: 100%;
-//   background-color: ${(mt) => mt.theme.pageBackground};
-// `;

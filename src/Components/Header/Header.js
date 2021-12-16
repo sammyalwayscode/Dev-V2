@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Lg from "../Image/ttlogo.png";
+import { NavLink } from "react-router-dom";
 
 const Header = (props) => {
   const changeTheme = () => {
@@ -16,7 +17,9 @@ const Header = (props) => {
       <Wrapper>
         <LogoDiv src={Lg} alt="" />
         <SignDiv>
-          <SignBtn>Sign Up</SignBtn>
+          <NavLink to="signup">
+            <SignBtn>Sign Up</SignBtn>
+          </NavLink>
           <SignBtn>Log In</SignBtn>
           <SignBtn onClick={changeTheme}>Change</SignBtn>
         </SignDiv>
