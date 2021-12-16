@@ -41,6 +41,10 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   /* overflow: hidden; */
+  margin-bottom: 180px;
+  @media screen and (max-width: 700px) {
+    margin-bottom: 80px;
+  }
 
   ::before {
     content: "Every";
@@ -80,6 +84,13 @@ const Wrapper = styled.div`
   align-items: center;
   z-index: 1;
   /* background-color: rosybrown; */
+
+  @media screen and (max-width: 500px) {
+    justify-content: center;
+  }
+  @media screen and (max-width: 750px) {
+    flex-direction: column-reverse;
+  }
 `;
 const ForImg = styled.div`
   width: 300px;
@@ -94,6 +105,9 @@ const ForImg = styled.div`
   @media screen and (max-width: 1100px) {
     margin-top: 50px;
     width: 300px;
+  }
+  @media screen and (max-width: 1100px) {
+    margin-right: 0;
   }
 `;
 const ImgBox = styled.div`
@@ -113,11 +127,19 @@ const ForText = styled.div`
   /* background-color: royalblue; */
   z-index: 1;
   margin-top: 70px;
+
   @media screen and (max-width: 400px) {
     margin-left: 0;
   }
-  @media screen and (max-width: 900px) {
-    margin-left: 20px;
+
+  @media screen and (max-width: 750px) {
+    margin-top: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
   }
 `;
 const SmallText = styled.div`
@@ -138,19 +160,22 @@ const SmallText = styled.div`
   }
 `;
 const TextTitle = styled.div`
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 10px;
   line-height: 35px;
   color: #fff;
-  /* @media screen and (max-width: 1100px) {
-    margin-bottom: 15px;
-  } */
+  @media screen and (max-width: 1100px) {
+    color: ${(props) => props.theme.textColor};
+  }
 `;
 const TextContent = styled.div`
   max-width: 360px;
   line-height: 27px;
   margin-bottom: 10px;
+  @media screen and (max-width: 500px) {
+    width: 300px;
+  }
 `;
 const ToolsHold = styled.div`
   max-width: 300px;
@@ -161,7 +186,7 @@ const ToolsHold = styled.div`
 const ToolBox = styled.div`
   height: 50px;
   width: 130px;
-  background: linear-gradient(to bottom right, #2d2f33, #2c2e32, #222529);
+  background: ${(props) => props.theme.gradentBackground};
   margin: 10px 0;
   display: flex;
   justify-content: center;

@@ -1,32 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-import ArtImg from "../Image/art1.png";
+import ArtImg from "../Image/art3.png";
+import No4icon from "../Image/qust.png";
+import No4icon2 from "../Image/check.png";
 
-const Home2 = (props) => {
+const Home4 = (props) => {
   return (
     <Container>
       <Wrapper>
         <TextDiv>
           <FeatSmall>Features</FeatSmall>
-          <SndTitle>Our people make the difference</SndTitle>
+          <SndTitle>Deliver instant answers with knowledge base</SndTitle>
           <SndContant>
-            At any time, you can contact our support center for help, because we
-            won over 100 clients.
+            <FirstCont>
+              Create and publish answers for customers and reduce your customer
+              support volume by at least 20%. Happier customers, fewer
+              conversations - everyone wins.
+            </FirstCont>
+            <IconSubTopic>
+              <SbIcon src={No4icon} />
+              <SbTopic1>Lunch a help center website</SbTopic1>
+            </IconSubTopic>
+            <SndCont>
+              Your knowledge base software has an auto-generated sitemap and
+              configurable SEO options for each article.
+            </SndCont>
+            <IconSubTopic2>
+              <SbIcon2 src={No4icon2} />
+              <SbTopic2>Deliver Instant answers</SbTopic2>
+            </IconSubTopic2>
+            <TrdContent>
+              Your knowledge base software has an auto-generated sitemap and
+              configurable SEO options for each article.
+            </TrdContent>
           </SndContant>
-          <SatisticRec>
-            <SastNumDisHold>
-              <SastNum>99%</SastNum>
-              <SastDisc>Average Rating</SastDisc>
-            </SastNumDisHold>
-            <SastNumDisHold>
-              <SastNum>24/7</SastNum>
-              <SastDisc>Support</SastDisc>
-            </SastNumDisHold>
-            <SastNumDisHold>
-              <SastNum>5000+</SastNum>
-              <SastDisc>Clients</SastDisc>
-            </SastNumDisHold>
-          </SatisticRec>
         </TextDiv>
         <ImageDiv>
           <ImgBox>
@@ -38,7 +45,7 @@ const Home2 = (props) => {
   );
 };
 
-export default Home2;
+export default Home4;
 
 const Container = styled.div`
   /* height: 100%; */
@@ -51,11 +58,7 @@ const Container = styled.div`
   position: relative;
   /* overflow: hidden; */
   /* background-color: red; */
-  padding-bottom: 100px;
-
-  @media screen and (max-width: 500px) {
-    padding-bottom: 80px;
-  }
+  padding-bottom: 150px;
 
   ::before {
     content: "Every";
@@ -103,7 +106,7 @@ const ImageDiv = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1;
-  margin-top: -30px;
+  margin-top: -90px;
 
   @media screen and (max-width: 1100px) {
     margin-top: 50px;
@@ -118,8 +121,9 @@ const ImgBox = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 const ImgMain = styled.img`
-  width: 300px;
+  width: 272px;
   margin-top: -40px;
+  margin-left: 10px;
 `;
 const TextDiv = styled.div`
   max-width: 400px;
@@ -132,6 +136,7 @@ const TextDiv = styled.div`
   }
   @media screen and (max-width: 400px) {
     margin-left: 0;
+    max-width: 280px;
   }
   @media screen and (max-width: 500px) {
     /* margin-bottom: 50px; */
@@ -157,7 +162,7 @@ const FeatSmall = styled.div`
   align-items: center;
   border-radius: 20px;
   color: #4579f5;
-  margin-top: -50px;
+  margin-top: -22px;
   margin-bottom: 15px;
   @media screen and (max-width: 1100px) {
     margin: 0;
@@ -176,25 +181,47 @@ const SndTitle = styled.div`
 `;
 const SndContant = styled.div`
   max-width: 360px;
-  line-height: 27px;
-  margin-bottom: 15px;
 `;
-const SatisticRec = styled.div`
-  max-width: 350px;
-  /* background-color: red; */
+
+const FirstCont = styled.div`
+  font-size: 15px;
+  margin-bottom: 10px;
+`;
+const IconSubTopic = styled.div`
   display: flex;
-  justify-content: space-between;
-`;
-const SastNumDisHold = styled.div``;
-const SastNum = styled.div`
-  font-size: 35px;
-  font-weight: bold;
-  color: #377dff;
-  @media screen and (max-width: 500px) {
-    font-size: 29px;
+  align-items: center;
+  margin-bottom: 10px;
+  @media screen and (max-width: 750px) {
+    justify-content: center;
   }
 `;
-const SastDisc = styled.div`
-  font-size: 12px;
-  font-weight: 500;
+const SbIcon = styled.img`
+  width: 25px;
+  margin-right: 15px;
+`;
+const SbTopic1 = styled.div`
+  font-weight: bold;
+`;
+const IconSubTopic2 = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  @media screen and (max-width: 750px) {
+    justify-content: center;
+  }
+`;
+const SbIcon2 = styled.img`
+  width: 25px;
+  margin-right: 15px;
+`;
+const SbTopic2 = styled.div`
+  font-weight: bold;
+`;
+const SndCont = styled.div`
+  font-size: 15px;
+  margin-bottom: 10px;
+`;
+const TrdContent = styled.div`
+  font-size: 15px;
+  line-height: normal;
 `;

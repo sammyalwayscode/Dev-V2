@@ -148,8 +148,10 @@ const TextTitle = styled.div`
   margin-bottom: 37px;
   line-height: 35px;
   color: #fff;
+
   @media screen and (max-width: 1100px) {
     margin-bottom: 15px;
+    color: ${(props) => props.theme.textColor};
   }
 `;
 const TextContent = styled.div`
