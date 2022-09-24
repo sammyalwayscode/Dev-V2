@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import storage from "local-storage-fallback";
 
-import HomeMain from "./Components/HomeMain/HomeMain";
+import HomeMain from "./Components/Home/HomeMain/HomeMain";
 import SignIn from "./Components/SignIn/SignIn";
 import SignUp from "./Components/SignUp/SignUp";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import OnboardingOne from "./Components/Onboarding/OnboardingOne";
+import OnbordingTwo from "./Components/Onboarding/OnbordingTwo";
+import OnboardingThree from "./Components/Onboarding/OnboardingThree";
+import OnboardingFour from "./Components/Onboarding/OnboardingFour";
 
 const LightTheme = {
   pageBackground: "white",
@@ -56,6 +60,11 @@ function App() {
               element={<HomeMain theme={theme} setTheme={setTheme} />}
             />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/onboardingone" element={<OnboardingOne />} />
+            <Route path="/onboardingtwo" element={<OnbordingTwo />} />
+            <Route path="/onboardingthree" element={<OnboardingThree />} />
+            <Route path="/onboardingfour" element={<OnboardingFour />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

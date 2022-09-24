@@ -1,60 +1,49 @@
 import React from "react";
 import styled from "styled-components";
-import ArtImg from "../Image/art1.png";
+import Art2 from "../../Image/art2.png";
 
-const Home2 = (props) => {
+const Home3 = () => {
   return (
     <Container>
       <Wrapper>
-        <TextDiv>
-          <FeatSmall>Features</FeatSmall>
-          <SndTitle>Our people make the difference</SndTitle>
-          <SndContant>
-            At any time, you can contact our support center for help, because we
-            won over 100 clients.
-          </SndContant>
-          <SatisticRec>
-            <SastNumDisHold>
-              <SastNum>99%</SastNum>
-              <SastDisc>Average Rating</SastDisc>
-            </SastNumDisHold>
-            <SastNumDisHold>
-              <SastNum>24/7</SastNum>
-              <SastDisc>Support</SastDisc>
-            </SastNumDisHold>
-            <SastNumDisHold>
-              <SastNum>5000+</SastNum>
-              <SastDisc>Clients</SastDisc>
-            </SastNumDisHold>
-          </SatisticRec>
-        </TextDiv>
-        <ImageDiv>
+        <ForImg>
           <ImgBox>
-            <ImgMain src={ArtImg} alt="" />
+            <ImgMain src={Art2} />
           </ImgBox>
-        </ImageDiv>
+        </ForImg>
+
+        <ForText>
+          <SmallText>Features</SmallText>
+          <TextTitle>Connect the tools you already use</TextTitle>
+          <TextContent>
+            Our extensive developers tool might also strike your fantancy
+          </TextContent>
+          <ToolsHold>
+            <ToolBox1>Tool 1</ToolBox1>
+            <ToolBox>Tool 2</ToolBox>
+            <ToolBox>Tool 3</ToolBox>
+            <ToolBox>Tool 4</ToolBox>
+          </ToolsHold>
+        </ForText>
       </Wrapper>
     </Container>
   );
 };
 
-export default Home2;
+export default Home3;
 
 const Container = styled.div`
-  /* height: 100%; */
   width: 100%;
-  /* min-height: 90vh; */
+  /* min-height: 80vh; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   position: relative;
   /* overflow: hidden; */
-  /* background-color: red; */
-  padding-bottom: 100px;
-
-  @media screen and (max-width: 500px) {
-    padding-bottom: 80px;
+  margin-bottom: 180px;
+  @media screen and (max-width: 700px) {
+    margin-bottom: 80px;
   }
 
   ::before {
@@ -64,7 +53,7 @@ const Container = styled.div`
     width: 1100px;
     background-color: #377dff;
     border-radius: 0 100px 0 100px;
-    top: 15px;
+    top: 150px;
   }
 
   @media screen and (max-width: 900px) {
@@ -93,21 +82,32 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  /* @media screen and (max-width: 1100px); */
-`;
+  z-index: 1;
+  /* background-color: rosybrown; */
 
-const ImageDiv = styled.div`
-  width: 500px;
+  @media screen and (max-width: 500px) {
+    justify-content: center;
+  }
+  @media screen and (max-width: 750px) {
+    flex-direction: column-reverse;
+  }
+`;
+const ForImg = styled.div`
+  width: 300px;
   /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
-  margin-top: -30px;
+  margin-top: 120px;
+  margin-right: 50px;
 
   @media screen and (max-width: 1100px) {
     margin-top: 50px;
     width: 300px;
+  }
+  @media screen and (max-width: 1100px) {
+    margin-right: 0;
   }
 `;
 const ImgBox = styled.div`
@@ -118,24 +118,20 @@ const ImgBox = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 const ImgMain = styled.img`
-  width: 300px;
-  margin-top: -40px;
+  width: 290px;
+  margin-top: -65px;
 `;
-const TextDiv = styled.div`
+
+const ForText = styled.div`
   max-width: 400px;
-  margin-left: 50px;
   /* background-color: royalblue; */
   z-index: 1;
+  margin-top: 70px;
 
-  @media screen and (max-width: 900px) {
-    margin-left: 20px;
-  }
   @media screen and (max-width: 400px) {
     margin-left: 0;
   }
-  @media screen and (max-width: 500px) {
-    /* margin-bottom: 50px; */
-  }
+
   @media screen and (max-width: 750px) {
     margin-top: 0;
     display: flex;
@@ -146,7 +142,7 @@ const TextDiv = styled.div`
     margin-bottom: 50px;
   }
 `;
-const FeatSmall = styled.div`
+const SmallText = styled.div`
   height: 24px;
   width: 74px;
   background-color: rgba(69, 121, 245, 8%);
@@ -157,44 +153,55 @@ const FeatSmall = styled.div`
   align-items: center;
   border-radius: 20px;
   color: #4579f5;
-  margin-top: -50px;
+  margin-top: 40px;
   margin-bottom: 15px;
   @media screen and (max-width: 1100px) {
     margin: 0;
   }
 `;
-const SndTitle = styled.div`
+const TextTitle = styled.div`
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   line-height: 35px;
   color: #fff;
   @media screen and (max-width: 1100px) {
-    margin-bottom: 15px;
     color: ${(props) => props.theme.textColor};
   }
 `;
-const SndContant = styled.div`
+const TextContent = styled.div`
   max-width: 360px;
   line-height: 27px;
-  margin-bottom: 15px;
-`;
-const SatisticRec = styled.div`
-  max-width: 350px;
-  /* background-color: red; */
-  display: flex;
-  justify-content: space-between;
-`;
-const SastNumDisHold = styled.div``;
-const SastNum = styled.div`
-  font-size: 35px;
-  font-weight: bold;
-  color: #377dff;
+  margin-bottom: 10px;
   @media screen and (max-width: 500px) {
-    font-size: 29px;
+    width: 300px;
   }
 `;
-const SastDisc = styled.div`
-  font-size: 12px;
-  font-weight: 500;
+const ToolsHold = styled.div`
+  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+const ToolBox = styled.div`
+  height: 50px;
+  width: 130px;
+  background: ${(props) => props.theme.gradentBackground};
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  font-weight: 700;
+`;
+const ToolBox1 = styled.div`
+  height: 50px;
+  width: 130px;
+  background-color: #377dff;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  font-weight: 700;
 `;

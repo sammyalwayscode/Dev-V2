@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import ArtImg from "../Image/art3.png";
-import No4icon from "../Image/qust.png";
-import No4icon2 from "../Image/check.png";
+import ArtImg from "../../Image/art3.png";
+import No4icon from "../../Image/qust.png";
+import No4icon2 from "../../Image/check.png";
 
 const Home4 = (props) => {
   return (
