@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import iconOne from "../Image/resp.png";
+import iconOne from "../../Image/resp.png";
 
 const faqData = [
   {

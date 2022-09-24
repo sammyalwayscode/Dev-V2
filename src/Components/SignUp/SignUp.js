@@ -22,7 +22,15 @@ const SignUp = () => {
               <InputButton>Sign Up</InputButton>
             </InputForm>
             <HasAcc>
-              Already has an account?<span>Sign In</span>
+              Already has an account?{" "}
+              <NavLink
+                to="/signin"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <span>Sign In</span>
+              </NavLink>
             </HasAcc>
           </SignInputHold>
         </InputPart>
@@ -55,12 +63,18 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 `;
 const InputPart = styled.div``;
 const ImagePart = styled.div`
   display: flex;
   flex-flow: column wrap;
   align-items: flex-end;
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 const IconTop = styled(NavLink)`
   font-size: 30px;

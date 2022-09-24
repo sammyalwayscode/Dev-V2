@@ -1,49 +1,60 @@
 import React from "react";
 import styled from "styled-components";
-import Art2 from "../Image/art2.png";
+import ArtImg from "../../Image/art1.png";
 
-const Home3 = () => {
+const Home2 = (props) => {
   return (
     <Container>
       <Wrapper>
-        <ForImg>
+        <TextDiv>
+          <FeatSmall>Features</FeatSmall>
+          <SndTitle>Our people make the difference</SndTitle>
+          <SndContant>
+            At any time, you can contact our support center for help, because we
+            won over 100 clients.
+          </SndContant>
+          <SatisticRec>
+            <SastNumDisHold>
+              <SastNum>99%</SastNum>
+              <SastDisc>Average Rating</SastDisc>
+            </SastNumDisHold>
+            <SastNumDisHold>
+              <SastNum>24/7</SastNum>
+              <SastDisc>Support</SastDisc>
+            </SastNumDisHold>
+            <SastNumDisHold>
+              <SastNum>5000+</SastNum>
+              <SastDisc>Clients</SastDisc>
+            </SastNumDisHold>
+          </SatisticRec>
+        </TextDiv>
+        <ImageDiv>
           <ImgBox>
-            <ImgMain src={Art2} />
+            <ImgMain src={ArtImg} alt="" />
           </ImgBox>
-        </ForImg>
-
-        <ForText>
-          <SmallText>Features</SmallText>
-          <TextTitle>Connect the tools you already use</TextTitle>
-          <TextContent>
-            Our extensive developers tool might also strike your fantancy
-          </TextContent>
-          <ToolsHold>
-            <ToolBox1>Tool 1</ToolBox1>
-            <ToolBox>Tool 2</ToolBox>
-            <ToolBox>Tool 3</ToolBox>
-            <ToolBox>Tool 4</ToolBox>
-          </ToolsHold>
-        </ForText>
+        </ImageDiv>
       </Wrapper>
     </Container>
   );
 };
 
-export default Home3;
+export default Home2;
 
 const Container = styled.div`
+  /* height: 100%; */
   width: 100%;
-  /* min-height: 80vh; */
+  /* min-height: 90vh; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   position: relative;
   /* overflow: hidden; */
-  margin-bottom: 180px;
-  @media screen and (max-width: 700px) {
-    margin-bottom: 80px;
+  /* background-color: red; */
+  padding-bottom: 100px;
+
+  @media screen and (max-width: 500px) {
+    padding-bottom: 80px;
   }
 
   ::before {
@@ -53,7 +64,7 @@ const Container = styled.div`
     width: 1100px;
     background-color: #377dff;
     border-radius: 0 100px 0 100px;
-    top: 150px;
+    top: 15px;
   }
 
   @media screen and (max-width: 900px) {
@@ -82,32 +93,21 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  z-index: 1;
-  /* background-color: rosybrown; */
-
-  @media screen and (max-width: 500px) {
-    justify-content: center;
-  }
-  @media screen and (max-width: 750px) {
-    flex-direction: column-reverse;
-  }
+  /* @media screen and (max-width: 1100px); */
 `;
-const ForImg = styled.div`
-  width: 300px;
+
+const ImageDiv = styled.div`
+  width: 500px;
   /* background-color: red; */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
-  margin-top: 120px;
-  margin-right: 50px;
+  margin-top: -30px;
 
   @media screen and (max-width: 1100px) {
     margin-top: 50px;
     width: 300px;
-  }
-  @media screen and (max-width: 1100px) {
-    margin-right: 0;
   }
 `;
 const ImgBox = styled.div`
@@ -118,20 +118,24 @@ const ImgBox = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 const ImgMain = styled.img`
-  width: 290px;
-  margin-top: -65px;
+  width: 300px;
+  margin-top: -40px;
 `;
-
-const ForText = styled.div`
+const TextDiv = styled.div`
   max-width: 400px;
+  margin-left: 50px;
   /* background-color: royalblue; */
   z-index: 1;
-  margin-top: 70px;
 
+  @media screen and (max-width: 900px) {
+    margin-left: 20px;
+  }
   @media screen and (max-width: 400px) {
     margin-left: 0;
   }
-
+  @media screen and (max-width: 500px) {
+    /* margin-bottom: 50px; */
+  }
   @media screen and (max-width: 750px) {
     margin-top: 0;
     display: flex;
@@ -142,7 +146,7 @@ const ForText = styled.div`
     margin-bottom: 50px;
   }
 `;
-const SmallText = styled.div`
+const FeatSmall = styled.div`
   height: 24px;
   width: 74px;
   background-color: rgba(69, 121, 245, 8%);
@@ -153,55 +157,44 @@ const SmallText = styled.div`
   align-items: center;
   border-radius: 20px;
   color: #4579f5;
-  margin-top: 40px;
+  margin-top: -50px;
   margin-bottom: 15px;
   @media screen and (max-width: 1100px) {
     margin: 0;
   }
 `;
-const TextTitle = styled.div`
+const SndTitle = styled.div`
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   line-height: 35px;
   color: #fff;
   @media screen and (max-width: 1100px) {
+    margin-bottom: 15px;
     color: ${(props) => props.theme.textColor};
   }
 `;
-const TextContent = styled.div`
+const SndContant = styled.div`
   max-width: 360px;
   line-height: 27px;
-  margin-bottom: 10px;
-  @media screen and (max-width: 500px) {
-    width: 300px;
-  }
+  margin-bottom: 15px;
 `;
-const ToolsHold = styled.div`
-  max-width: 300px;
+const SatisticRec = styled.div`
+  max-width: 350px;
+  /* background-color: red; */
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 `;
-const ToolBox = styled.div`
-  height: 50px;
-  width: 130px;
-  background: ${(props) => props.theme.gradentBackground};
-  margin: 10px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 7px;
-  font-weight: 700;
+const SastNumDisHold = styled.div``;
+const SastNum = styled.div`
+  font-size: 35px;
+  font-weight: bold;
+  color: #377dff;
+  @media screen and (max-width: 500px) {
+    font-size: 29px;
+  }
 `;
-const ToolBox1 = styled.div`
-  height: 50px;
-  width: 130px;
-  background-color: #377dff;
-  margin: 10px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 7px;
-  font-weight: 700;
+const SastDisc = styled.div`
+  font-size: 12px;
+  font-weight: 500;
 `;
